@@ -62,16 +62,35 @@
 <div class="center">
     <h1>Welcome Travellers!</h1>
     <b>Want to explore varity of destinations! you're on the right place!</b>
-    <p>Here you can have a look into varity of places with all details.
+    <p>Here are the few places we are recommending our customers to enjoy.
     </p>
-    
-<h2>Recommendations</h2>
-<div id="report"></div>
+    <div class="center">
+    <button id='btnBook'>Book Now</button>
+    </div>
+
+    <div class="container">
+        <div class="analysisForm">
+        <h1>Recommendation</h1>
+        <div>
+        <label for="condition">Country:</label>
+        <select id="condition">
+          <option value="">Select Country</option>
+          <option value="Diabetes">Australia</option>
+          <option value="Thyroid">Japan</option>
+          <option value="High Blood Pressure">Brazil</option>
+        </select>
+        </div>
+        <button id="addPatient">Details</button>
+        <h2>Analysis Report</h2>
+        <div id="report"></div>
+        </div>
+        <div class="searchCondition">
+            <div id="result"></div>
+        </div>
+        </div>
+    </div>
 </div>
-<div class="searchCondition">
-    <div id="result"></div>
-</div>
-</div>
+
 <script src="./travel_recommendation.js"></script>
 </body>
 </html>
