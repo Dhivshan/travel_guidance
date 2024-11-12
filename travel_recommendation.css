@@ -33,6 +33,7 @@ nav {
   /* Basic CSS for the form elements */
   body {
     font-family: Arial, sans-serif;
+    background-image: url('travel2.jpg');
     /* margin: 20px; */
   }
   
@@ -58,14 +59,14 @@ nav {
   
   button {
     padding: 7px 15px;
-    background-color: #4CAF50;
+    background-color:blueviolet;
     color: white;
     border: none;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #9d97d7;
   }
   
   /* Basic CSS for the report section */
