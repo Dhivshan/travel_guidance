@@ -1,28 +1,30 @@
   function searchCondition() {
         const input = document.getElementById('conditionInput').value.toLowerCase();
         const resultDiv = document.getElementById('result');
+        if(input=="country" || input=="countries" || input=="australia"|| input=="japan" || input=="brazil"){
         resultDiv.innerHTML = '';
-        fetch('travel_recommendation_api.json')
-          .then(response => response.json())
-          .then(data => {
-            const condition = data.conditions.find(item => item.name.toLowerCase() === input);
-            if (condition) {
-              const symptoms = condition.symptoms.join(', ');
-              const prevention = condition.prevention.join(', ');
-              const treatment = condition.treatment;
-              resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
-              resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
-              resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-              resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-              resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
-            } else {
-              resultDiv.innerHTML = 'Condition not found.';
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            resultDiv.innerHTML = 'An error occurred while fetching data.';
-          });
+        resultDiv.innerHTML += `<h2>${input}</h2>`;
+        resultDiv.innerHTML += `<img src="country.jpg">`;
+        resultDiv.innerHTML += `<p><strong>Name:</strong> ${input}</p>`;
+        resultDiv.innerHTML += `<p><strong>Description:</strong> ${"A lively place known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks"}</p>`;
+    
+        }else if(input=="temple" || input=="temples" || input=="cambodia"|| input=="india"){
+            resultDiv.innerHTML = '';
+            resultDiv.innerHTML += `<h2>${input}</h2>`;
+            resultDiv.innerHTML += `<img src="temple.jpg">`;
+            resultDiv.innerHTML += `<p><strong>Name:</strong> ${"Taj Mahal, India"}</p>`;
+            resultDiv.innerHTML += `<p><strong>Description:</strong> ${"An iconic symbol of love and a masterpiece of Mughal architecture."}</p>`;
+            }else if(input=="beach"|| input=="beaches" || input=="french polynesia"|| input=="brazil"){
+                resultDiv.innerHTML = '';
+                resultDiv.innerHTML += `<h2>${input}</h2>`;
+                resultDiv.innerHTML += `<img src="beach.jpg">`;
+                resultDiv.innerHTML += `<p><strong>Name:</strong> ${"Copacabana Beach, Brazil"}</p>`;
+                resultDiv.innerHTML += `<p><strong>Description:</strong> ${"A famous beach in Rio de Janeiro, Brazil, with a vibrant atmosphere and scenic views"}</p>`;
+                }else{
+
+                    resultDiv.innerHTML = '';
+                    resultDiv.innerHTML += `<h2>${"Results not found"}</h2>`;   
+                }
       }
         btnSearch.addEventListener('click', searchCondition);
 
@@ -46,7 +48,34 @@
     document.getElementById('recForm').addEventListener('submit',showtravelDetails );
 
       function resetDet(){
-        document.getElementById('search').value=""; 
+        document.getElementById('conditionInput').value=""; 
         alert("Reset done");
     
     }
+    function change_myselect(sel) {
+        if (sel=="Australia") {
+            
+            document.getElementById("aus").style.visibility = 'visible'
+            document.getElementById('jap').style.visibility = 'hidden'
+            document.getElementById('braz').style.visibility = 'hidden'
+          } else if (sel=="Japan") {
+            document.getElementById('jap').style.visibility = 'visible'
+            document.getElementById('aus').style.visibility = 'hidden'
+            document.getElementById('braz').style.visibility = 'hidden'
+          }else if (sel=="Brazil") {
+            document.getElementById('braz').style.visibility = 'visible'
+            document.getElementById('aus').style.visibility = 'hidden'
+            document.getElementById('jap').style.visibility = 'hidden'
+          }else{
+            document.getElementById('braz').style.visibility = 'hidden'
+            document.getElementById('aus').style.visibility = 'hidden'
+            document.getElementById('jap').style.visibility = 'hidden'
+          }
+            
+}
+function myFunction(){
+    document.getElementById('braz').style.visibility = 'hidden'
+    document.getElementById('aus').style.visibility = 'hidden'
+    document.getElementById('jap').style.visibility = 'hidden'
+}
+
