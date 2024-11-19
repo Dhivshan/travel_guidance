@@ -51,51 +51,86 @@
                 // Show the popup
                 const popup = document.getElementById("search-popup");
                 popup.classList.remove("hidden");
+                
+                
+               
+                
       }
         btnSearch.addEventListener('click', searchCondition);
 
-        function showtravelDetails(event) {
-      event.preventDefault();
-      const city = document.getElementById('city').value;
-      fetch('./travel_recommendation_api.json')
-    .then((res) => {
-                    if (!res.ok) {
-                        throw new Error
-                            (`HTTP error! Status: ${res.status}`);
-                    }
-                    return res.json();
-                })
-                .then((data) =>
-                    console.log(data))
-                .catch((error) =>
-                    console.error("Unable to fetch data:", error));
-        }
-        
-    document.getElementById('recForm').addEventListener('submit',showtravelDetails );
-
-      function resetDet(){
+     const resetButton = document.getElementById('reset');
+      resetButton.addEventListener('click', function() {
         document.getElementById('conditionInput').value=""; 
-        alert("Reset done");
-    
-    }
+        const popup = document.getElementById("search-popup");
+        popup.classList.add("hidden");
+      });
+
     function change_myselect(sel) {
-        if (sel=="Australia") {
-            
-            document.getElementById("aus").style.visibility = 'visible'
+
+        if (sel=="Australia") {  
+            let date = new Date();
+        let options = {timeZone: 'Australia/Sydney'};
+        let eastCoastTime = date.toLocaleString('en-AU', options);
+
+            const recommendDiv = document.getElementById('recommend-results');
+            recommendDiv.innerHTML = '';
+            recommendDiv.innerHTML += `<h2>${sel}</h2>`;
+            recommendDiv.innerHTML += `<h5>${eastCoastTime}</h5>`;
+    
+            recommendDiv.innerHTML += `<img src="syd_img.jpg">`;
+            recommendDiv.innerHTML += `<p><strong>Name:</strong> ${"Sydney, Australia"}</p>`;
+            recommendDiv.innerHTML += `<p><strong>Description:</strong> ${"A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge."}</p>`;
+    
+            recommendDiv.innerHTML += `<img src="mel_img.jpg">`;
+            recommendDiv.innerHTML += `<p><strong>Name:</strong> ${"Melbourne, Australia"}</p>`;
+            recommendDiv.innerHTML += `<p><strong>Description:</strong> ${"A cultural hub famous for its art, food, and diverse neighborhoods."}</p>`;
+
+          /*  document.getElementById("aus").style.visibility = 'visible'
             document.getElementById('jap').style.visibility = 'hidden'
-            document.getElementById('braz').style.visibility = 'hidden'
+            document.getElementById('braz').style.visibility = 'hidden'*/
           } else if (sel=="Japan") {
-            document.getElementById('jap').style.visibility = 'visible'
+
+            let date = new Date();
+            let options = {timeZone: 'Asia/Tokyo'};
+            let eastCoastTime = date.toLocaleString('ja-JP-u-ca-japanese', options);
+
+            const recommendDiv = document.getElementById('recommend-results');         
+            recommendDiv.innerHTML = '';
+            recommendDiv.innerHTML += `<h2>${sel}</h2>`;
+            recommendDiv.innerHTML += `<h5>${eastCoastTime}</h5>`;
+    
+            recommendDiv.innerHTML += `<img src="tok_img.jpg">`;
+            recommendDiv.innerHTML += `<p><strong>Name:</strong> ${"Tokyo, Japan"}</p>`;
+            recommendDiv.innerHTML += `<p><strong>Description:</strong> ${"A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture."}</p>`;
+    
+            recommendDiv.innerHTML += `<img src="kyoto_img.jpg">`;
+            recommendDiv.innerHTML += `<p><strong>Name:</strong> ${"Kyoto, Japan"}</p>`;
+            recommendDiv.innerHTML += `<p><strong>Description:</strong> ${"Known for its historic temples, gardens, and traditional tea houses."}</p>`;
+
+          /*  document.getElementById('jap').style.visibility = 'visible'
             document.getElementById('aus').style.visibility = 'hidden'
-            document.getElementById('braz').style.visibility = 'hidden'
+            document.getElementById('braz').style.visibility = 'hidden'*/
+
           }else if (sel=="Brazil") {
-            document.getElementById('braz').style.visibility = 'visible'
+
+            const recommendDiv = document.getElementById('recommend-results');
+            recommendDiv.innerHTML = '';
+            recommendDiv.innerHTML += `<h2>${sel}</h2>`;
+    
+            recommendDiv.innerHTML += `<img src="riode_img.jpg">`;
+            recommendDiv.innerHTML += `<p><strong>Name:</strong> ${"Rio de Janeiro, Brazil"}</p>`;
+            recommendDiv.innerHTML += `<p><strong>Description:</strong> ${"A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks."}</p>`;
+    
+            recommendDiv.innerHTML += `<img src="saopaulo_img.jpg">`;
+            recommendDiv.innerHTML += `<p><strong>Name:</strong> ${"São Paulo, Brazil"}</p>`;
+            recommendDiv.innerHTML += `<p><strong>Description:</strong> ${"The financial hub with diverse culture, arts, and a vibrant nightlife."}</p>`;
+
+            /*document.getElementById('braz').style.visibility = 'visible'
             document.getElementById('aus').style.visibility = 'hidden'
-            document.getElementById('jap').style.visibility = 'hidden'
-          }else{
-            document.getElementById('braz').style.visibility = 'hidden'
-            document.getElementById('aus').style.visibility = 'hidden'
-            document.getElementById('jap').style.visibility = 'hidden'
+            document.getElementById('jap').style.visibility = 'hidden'*/
+
+          }else {
+            recommendDiv.innerHTML = '';
           }
             
 }

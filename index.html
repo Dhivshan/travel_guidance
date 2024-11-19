@@ -27,11 +27,9 @@
   <li><a href="./index.html" id="home">Home </a></li>
   <li><a href="./travel_aboutus.html" id="aboutus">About Us </a></li>
   <li><a href="./travel_contact.html" id="contact">Contact Us </a></li>
-  <li><input type="text" id="conditionInput" placeholder="Enter a place">  </li>
-  <li><button id='btnSearch'>Search</button>
-  </li>
-  <li><button id='resetDet'>Reset</button>
-  </li>
+  <li><input type="text" id="conditionInput" placeholder="Enter a place"></li>
+  <li><button id='btnSearch'>Search</button> </li>
+  <li><button id='reset'>Reset</button> </li>
 </ul>
 </nav>
 <div class="items">
@@ -75,40 +73,18 @@
         <p>Here are the few places we are recommending our customers to enjoy.
         </p>
         <div>
-        <label for="condition">Country:</label>
+        <label>Country:</label>
         <select id="myselect" onchange="change_myselect(this.value)">
           <option value="Choose an option:">Select Country</option>
           <option value="Australia">Australia</option>
           <option value="Japan">Japan</option>
           <option value="Brazil">Brazil</option>
         </select>
-        <div id="aus">
-            <h2>Recommendation Results:</h2>
-            <ul>
-        <li><img src="syd_img.jpg"> Sydney, Australia. A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge.
-        </li>
-        <li><img src="mel_img.jpg">Melbourne, Australia. A cultural hub famous for its art, food, and diverse neighborhoods.
-        </li>
-    </ul>
-    </div>
-    <div id="jap">
+        <div>
         <h2>Recommendation Results:</h2>
-        <ul>
-        <li><img src="tok_img.jpg">Tokyo, Japan. A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture.
-        </li>
-        <li><img src="kyoto_img.jpg">Kyoto, Japan. Known for its historic temples, gardens, and traditional tea houses.
-        </li>
-    </ul>
-    </div>
-     <div id="braz">
-        <h2>Recommendation Results:</h2>
-        <ul>
-        <li><img src="riode_img.jpg">Rio de Janeiro, Brazil. A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks.
-        </li>
-        <li><img src="saopaulo_img.jpg">São Paulo, Brazil. The financial hub with diverse culture, arts, and a vibrant nightlife.
-        </li>
-    </ul>
-    </div>
+        <div id="recommend-results"></div>
+        </div>
+    
         </div> 
         
         <div id="search-popup" class="hidden">
