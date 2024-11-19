@@ -44,6 +44,7 @@ nav {
   div {
     margin-bottom: 10px;
   }
+
   
   label {
     display: inline-block;
@@ -91,4 +92,18 @@ nav {
     width: 200px;
     height: 100px;
   }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    position: fixed;
+    
+}
+
+i {
+    margin-top: 8px;
+}
+
   

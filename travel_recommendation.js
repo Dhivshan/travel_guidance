@@ -11,13 +11,13 @@
         }else if(input=="temple" || input=="temples" || input=="cambodia"|| input=="india"){
             resultDiv.innerHTML = '';
             resultDiv.innerHTML += `<h2>${input}</h2>`;
-            resultDiv.innerHTML += `<img src="temple.jpg">`;
+            resultDiv.innerHTML += `<img src="taj_templ_img.jpg">`;
             resultDiv.innerHTML += `<p><strong>Name:</strong> ${"Taj Mahal, India"}</p>`;
             resultDiv.innerHTML += `<p><strong>Description:</strong> ${"An iconic symbol of love and a masterpiece of Mughal architecture."}</p>`;
             }else if(input=="beach"|| input=="beaches" || input=="french polynesia"|| input=="brazil"){
                 resultDiv.innerHTML = '';
                 resultDiv.innerHTML += `<h2>${input}</h2>`;
-                resultDiv.innerHTML += `<img src="beach.jpg">`;
+                resultDiv.innerHTML += `<img src="copacabana_beach.jpg">`;
                 resultDiv.innerHTML += `<p><strong>Name:</strong> ${"Copacabana Beach, Brazil"}</p>`;
                 resultDiv.innerHTML += `<p><strong>Description:</strong> ${"A famous beach in Rio de Janeiro, Brazil, with a vibrant atmosphere and scenic views"}</p>`;
                 }else{

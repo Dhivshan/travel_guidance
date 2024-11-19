@@ -3,45 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Travel Guidance</title>
+  <link rel="stylesheet" 
+  href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./travel_recommendation.css">
 
   <style>
-    .fa:hover {
-        opacity: 0.9;
-    }
-
-    .fa-linkedin {
-        background: #007bb5;
-        color: white;
-    }
-
-    .fa-pinterest {
-        background: #cb2027;
-        color: white;
-    }
-
-    .fa-reddit {
-        background: #ff5700;
-        color: white;
-    }
-
-    .fa {
-        padding: 20px;
-        font-size: 40px;
-        width: 60px;
-        text-decoration: none;
-        margin: 5px 80px;
-    }
-
     h1 {
         color: green;
     }
 
     .center {
   margin: auto;
-  width: 60%;
+  width: 50%;
   border: none;
-  padding: 10px;
+  padding: 5px;
 }
 </style>
 </head>
@@ -58,6 +34,33 @@
   </li>
 </ul>
 </nav>
+<div class="items">
+    <a href="#">
+        <i class="fa fa-facebook-official" 
+            style="font-size: 30px; color: #333">
+        </i>
+    </a>
+    <a href="#">
+        <i class="fa fa-instagram" 
+            style="font-size: 30px; color: #333;">
+        </i>
+    </a>
+    <a href="#">
+        <i class="fa fa-linkedin-square" 
+            style="font-size: 30px; color: #333">
+        </i>
+    </a>
+    <a href="#">
+        <i class="fa fa-youtube-play" 
+            style="font-size: 30px; color: #333">
+        </i>
+    </a>
+    <a href="#">
+        <i class="fa fa-twitter-square" 
+            style="font-size: 30px; color: #333">
+        </i>
+    </a>
+</div>
 <div class="center">
 <div class="center">
     <h1>Welcome Travellers!</h1>
@@ -65,8 +68,9 @@
     <div class="center">
     <button id='btnBook'>Book Now</button>
     </div>
+    
     <div class="container">
-        <div class="analysisForm">
+        <div>
         <h1>Recommendation</h1>
         <p>Here are the few places we are recommending our customers to enjoy.
         </p>
@@ -78,42 +82,43 @@
           <option value="Japan">Japan</option>
           <option value="Brazil">Brazil</option>
         </select>
-        </div> 
-        <div class="searchCondition">
-            <div id="result"></div>
-        </div>
         <div id="aus">
             <h2>Recommendation Results:</h2>
             <ul>
-        <li>Sydney, Australia. A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge.
+        <li><img src="syd_img.jpg"> Sydney, Australia. A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge.
         </li>
-        <li>Melbourne, Australia. A cultural hub famous for its art, food, and diverse neighborhoods.
+        <li><img src="mel_img.jpg">Melbourne, Australia. A cultural hub famous for its art, food, and diverse neighborhoods.
         </li>
     </ul>
     </div>
     <div id="jap">
         <h2>Recommendation Results:</h2>
         <ul>
-        <li>Tokyo, Japan. A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture.
+        <li><img src="tok_img.jpg">Tokyo, Japan. A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture.
         </li>
-        <li>Kyoto, Japan. Known for its historic temples, gardens, and traditional tea houses.
+        <li><img src="kyoto_img.jpg">Kyoto, Japan. Known for its historic temples, gardens, and traditional tea houses.
         </li>
     </ul>
     </div>
-    <div id="braz">
+     <div id="braz">
         <h2>Recommendation Results:</h2>
         <ul>
-        <li>Rio de Janeiro, Brazil. A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks.
+        <li><img src="riode_img.jpg">Rio de Janeiro, Brazil. A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks.
         </li>
-        <li>São Paulo, Brazil. The financial hub with diverse culture, arts, and a vibrant nightlife.
+        <li><img src="saopaulo_img.jpg">São Paulo, Brazil. The financial hub with diverse culture, arts, and a vibrant nightlife.
         </li>
     </ul>
     </div>
+        </div> 
+        <div class="searchCondition">
+            <div id="result"></div>
+        </div>
         </div>
         </div>
     </div>
 </div>
 
 <script src="./travel_recommendation.js"></script>
+
 </body>
 </html>
